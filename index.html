@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EuroExplora | Turismo Acessível na Europa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="accessibility-bar" aria-label="Controles de acessibilidade">
+        <button onclick="changeFontSize('increase')" aria-label="Aumentar fonte">A+</button>
+        <button onclick="changeFontSize('decrease')" aria-label="Diminuir fonte">A-</button>
+        <button onclick="toggleContrast()" aria-label="Alternar alto contraste">🌓 Contraste</button>
+    </nav>
+
+    <header>
+        <nav class="main-nav">
+            <div class="logo">Euro<span>Explora</span></div>
+            <ul role="menubar">
+                <li role="none"><a href="#destinos" role="menuitem">Destinos</a></li>
+                <li role="none"><a href="#faq" role="menuitem">Dúvidas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h1 id="hero-title">Descubra a Europa de um jeito novo.</h1>
+                <p>Roteiros personalizados com foco em conforto e acessibilidade cultural.</p>
+                <a href="#destinos" class="btn-primary">Explorar Destinos</a>
+            </div>
+        </section>
+
+        <section id="destinos" class="reveal" aria-labelledby="destinos-title">
+            <h2 id="destinos-title">Destinos em Destaque</h2>
+            <div id="destinos-grid" class="grid-container">
+                </div>
+        </section>
+
+        <section id="faq" class="reveal" aria-labelledby="faq-title">
+            <h2 id="faq-title">Dúvidas Frequentes</h2>
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="content-1">
+                        Qual a melhor época para visitar?
+                    </button>
+                    <div id="content-1" class="accordion-content" role="region">
+                        <p>A primavera (abril a junho) e o outono (setembro a outubro) oferecem clima ameno e menos multidões.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="content-2">
+                        Os roteiros incluem guias locais?
+                    </button>
+                    <div id="content-2" class="accordion-content" role="region">
+                        <p>Sim, todos os nossos pacotes contam com guias certificados e especializados em acessibilidade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2023 EuroExplora. Design focado em todos os usuários.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
