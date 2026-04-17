@@ -1,0 +1,115 @@
+/* --- DESIGN SYSTEM & VARIÁVEIS --- */
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
+    --bg-color: #f4f7f6;
+    --text-color: #333;
+    --white: #ffffff;
+    --radius: 12px;
+    --spacing-lg: 2rem;
+    --spacing-md: 1rem;
+    --transition: all 0.3s ease;
+    --font-base: 16px;
+}
+
+/* --- MODO ALTO CONTRASTE --- */
+body.high-contrast {
+    --primary-color: #ffff00;
+    --accent-color: #ffffff;
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --white: #000000;
+}
+
+body.high-contrast .btn-primary {
+    border: 2px solid yellow;
+    background: black;
+    color: yellow;
+}
+
+/* --- RESET & BASE --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: var(--font-base); scroll-behavior: smooth; }
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- LAYOUT GRID (MOBILE-FIRST) --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Coluna única no mobile */
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+}
+
+/* --- MEDIA QUERIES (DESKTOP) --- */
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 Colunas no Desktop */
+    }
+}
+
+/* --- COMPONENTES --- */
+.accessibility-bar {
+    background: var(--primary-color);
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    color: white;
+}
+
+.card {
+    background: var(--white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.card:hover { transform: translateY(-5px); }
+
+/* --- ACORDEÃO --- */
+.accordion-header {
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.accordion-content {
+    display: none;
+    padding: 1rem;
+    background: var(--white);
+}
+
+.accordion-content.active { display: block; }
+
+/* --- ANIMAÇÕES (SCROLL REVEAL) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
